@@ -83,7 +83,7 @@ class EnabledCommandProcessor(DefaultCommandProcessor):
                     self.write_line("   ip address {}".format(ip))
                 for ip in port.ips[1:]:
                     self.write_line("   ip address {} secondary".format(ip))
-                if port.no_mpls_ip is True:
+                if port.mpls_ip is False:
                     self.write_line("   no mpls ip")
                 for ip_helper in port.ip_helpers:
                     self.write_line("   ip helper-address {}".format(ip_helper))
