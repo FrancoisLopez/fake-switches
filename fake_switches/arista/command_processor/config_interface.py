@@ -50,6 +50,18 @@ class ConfigInterfaceCommandProcessor(AristaBaseCommandProcessor):
         else:
             raise NotImplementedError
 
+    def do_mpls(self, *args):
+        if args[0] == 'ip':
+            self.port.no_mpls_ip = None
+        else:
+            raise NotImplementedError
+
+    def do_no_mpls(self, *args):
+        if args[0] == 'ip':
+            self.port.no_mpls_ip = True
+        else:
+            raise NotImplementedError
+
     def do_switchport(self, *args):
         operations = [
             (("mode",), self._switchport_mode),
